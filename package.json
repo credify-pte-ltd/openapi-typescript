@@ -1,5 +1,5 @@
 {
-  "name": "openapi-typescript",
+  "name": "@credify/openapi-typescript",
   "description": "Generate TypeScript types from Swagger OpenAPI specs",
   "main": "dist/cjs",
   "version": "3.0.1",

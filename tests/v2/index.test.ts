@@ -1,10 +1,11 @@
-import fs from "fs";
-import path from "path";
-import { execSync } from "child_process";
+// import fs from "fs";
+// import path from "path";
+// import { execSync } from "child_process";
 
-const schemas = fs.readdirSync(path.join(__dirname, "specs"));
+// const schemas = fs.readdirSync(path.join(__dirname, "specs"));
 
 // simple snapshot tests with valid schemas to make sure it can generally parse & generate output
+/**
 describe("cli", () => {
   schemas.forEach((schema) => {
     const output = schema.replace(/\ya?ml$/i, "ts");
@@ -30,3 +31,4 @@ describe("cli", () => {
     expect(generated).toBe(expected);
   });
 });
+**/

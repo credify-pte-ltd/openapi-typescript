@@ -13,6 +13,12 @@ interface TransformSchemaObjMapOptions {
   required?: string[];
 }
 
+const toCamel = (s: string): string => {
+  return s.replace(/([-_][a-z])/gi, ($1) => {
+    return $1.toUpperCase().replace("-", "").replace("_", "");
+  });
+};
+
 /** Take object keys and convert to TypeScript interface */
 export function transformSchemaObjMap(obj: Record<string, any>, options?: TransformSchemaObjMapOptions): string {
   let output = "";
@@ -23,7 +29,7 @@ export function transformSchemaObjMap(obj: Record<string, any>, options?: Transf
     if (value.description) output += comment(value.description);
 
     // 2. name (with “?” if optional property)
-    output += `"${key}"${required.includes(key) ? "" : "?"}: `;
+    output += `"${toCamel(key)}"${required.includes(key) ? "" : "?"}: `;
 
     // 3. transform
     output += transformSchemaObj(value.schema || value);

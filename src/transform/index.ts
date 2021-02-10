@@ -2,7 +2,6 @@ import { OperationObject } from "../types";
 import { comment } from "../utils";
 import { transformHeaderObjMap } from "./headers";
 import { transformOperationObj } from "./operation";
-import { transformPathsObj } from "./paths";
 import { transformResponsesObj } from "./responses";
 import { transformSchemaObjMap } from "./schema";
 
@@ -33,6 +32,7 @@ export function transformAll(schema: any, { version, rawSchema }: TransformOptio
   }
 
   // #/paths (V2 & V3)
+  /**
   output += `export interface paths {\n`; // open paths
   if (schema.paths) {
     output += transformPathsObj(schema.paths, {
@@ -41,6 +41,7 @@ export function transformAll(schema: any, { version, rawSchema }: TransformOptio
     });
   }
   output += `}\n\n`; // close paths
+**/
 
   switch (version) {
     case 2: {
@@ -71,7 +72,7 @@ export function transformAll(schema: any, { version, rawSchema }: TransformOptio
         // #/components/schemas
         if (schema.components.schemas) {
           const required = Object.keys(schema.components.schemas);
-          output += `  schemas: {\n    ${transformSchemaObjMap(schema.components.schemas, { required })}\n  }\n`;
+          output += `  ${transformSchemaObjMap(schema.components.schemas, { required })}\n`;
         }
 
         // #/components/responses
