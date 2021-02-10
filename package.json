@@ -2,7 +2,7 @@
   "name": "@credify/openapi-typescript",
   "description": "Generate TypeScript types from Swagger OpenAPI specs",
   "main": "dist/cjs",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "engines": {
     "node": ">= 10.0.0"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/drwpow/openapi-typescript"
+    "url": "https://github.com/credify-pte-ltd/openapi-typescript"
   },
   "keywords": [
     "swagger",
@@ -26,10 +26,6 @@
   ],
   "author": "drew@pow.rs",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/drwpow/openapi-typescript/issues"
-  },
-  "homepage": "https://github.com/drwpow/openapi-typescript#readme",
   "@pika/pack": {
     "pipeline": [
       [
